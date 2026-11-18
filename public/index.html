@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ABISO – Barangay Cambalo</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<script>
+/* ilapat agad ang theme para walang flash */
+try { var p = JSON.parse(localStorage.getItem('abiso_prefs') || '{}');
+  document.documentElement.dataset.theme = p.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); } catch (e) {}
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="login">
+  <div class="lang"><button type="button" class="pill themebtn" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Dark / Light mode"></button><button type="button" class="pill" onclick="setLang('tl')">Tagalog</button><button type="button" class="pill" onclick="setLang('en')">English</button></div>
+  <div class="lg">
+    <div class="lg-left">
+      <div class="lg-brand">
+        <img class="lg-seal" src="logo.png" alt="Seal of Barangay Cambalo">
+        <span class="lg-bar"></span>
+        <div><div class="lg-name">ABISO</div><div class="lg-sub">Barangay Notification System</div><div class="lg-brgy">BARANGAY CAMBALO</div></div>
+      </div>
+      <h2 class="lg-tag">Keeping Every<br>Household Informed.</h2>
+      <svg class="lg-line" viewBox="0 0 280 12" aria-hidden="true"><path d="M2 8 C 70 2, 190 2, 278 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <p class="lg-desc">Get the latest announcements, important updates, and barangay services — all in one system.</p>
+      <svg class="lg-scene" viewBox="0 0 640 250" aria-hidden="true">
+        <path d="M0 150 C 90 95, 190 115, 290 140 S 520 120, 640 100 V250 H0Z" fill="#cfe8d3"/>
+        <path d="M0 185 C 120 150, 240 170, 360 178 S 560 160, 640 150 V250 H0Z" fill="#b7dcbd"/>
+        <g fill="#5d9c68"><rect x="38" y="120" width="8" height="46" fill="#6b4f3a"/><circle cx="42" cy="108" r="30"/><circle cx="22" cy="130" r="20"/><circle cx="64" cy="128" r="20"/></g>
+        <g fill="#5d9c68"><rect x="596" y="112" width="8" height="52" fill="#6b4f3a"/><circle cx="600" cy="98" r="32"/><circle cx="578" cy="122" r="20"/><circle cx="622" cy="120" r="20"/></g>
+        <g>
+          <polygon points="150,92 330,92 350,112 130,112" fill="#4f8d5e"/>
+          <rect x="140" y="112" width="200" height="12" fill="#d8d3c0"/>
+          <rect x="150" y="124" width="180" height="62" fill="#e9e4d1"/>
+          <rect x="196" y="128" width="88" height="20" rx="2" fill="#f4f1e4"/>
+          <text x="240" y="142" text-anchor="middle" font-size="11" font-weight="700" fill="#3b6a4a" font-family="Segoe UI,Arial,sans-serif">BARANGAY HALL</text>
+          <g fill="#d3cdb6"><rect x="158" y="124" width="8" height="62"/><rect x="178" y="124" width="8" height="62"/><rect x="294" y="124" width="8" height="62"/><rect x="314" y="124" width="8" height="62"/></g>
+          <rect x="222" y="152" width="36" height="34" fill="#7fb7a0"/><rect x="238" y="152" width="4" height="34" fill="#e9e4d1"/>
+          <g fill="#9fc9d6"><rect x="162" y="150" width="14" height="22"/><rect x="190" y="150" width="14" height="22"/><rect x="276" y="150" width="14" height="22"/><rect x="304" y="150" width="14" height="22"/></g>
+        </g>
+        <g>
+          <path d="M64 250 v-34 c0-22 14-36 34-36 s34 14 34 36 v34z" fill="#2f6b57"/><circle cx="98" cy="164" r="17" fill="#2b2b2b"/>
+          <path d="M150 250 v-30 c0-24 12-40 30-40 s30 16 30 40 v30z" fill="#a5d27a"/><circle cx="180" cy="160" r="16" fill="#1f1f1f"/><path d="M162 168 c-6 20-4 40 4 54 l28-4 c4-20 2-40-6-52z" fill="#1f1f1f"/>
+          <path d="M268 250 v-24 c0-18 10-30 24-30 s24 12 24 30 v24z" fill="#2f6b57"/><circle cx="292" cy="182" r="13" fill="#262626"/>
+          <path d="M352 250 v-32 c0-22 14-36 32-36 s32 14 32 36 v32z" fill="#3f7a5f"/><circle cx="384" cy="166" r="16" fill="#d9d9d9"/>
+        </g>
+      </svg>
+    </div>
+    <form class="lcard lg-card" onsubmit="return doLogin(event)" novalidate>
+      <div class="lg-ico"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L54 14 V30 C54 44 44 54 32 58 C20 54 10 44 10 30 V14Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><rect x="22" y="29" width="20" height="15" rx="3" fill="currentColor"/><path d="M26 29 v-5 a6 6 0 0 1 12 0 v5" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg></div>
+      <h2>Welcome Back!</h2>
+      <p class="sub">Sign in to your ABISO account</p>
+      <div class="lg-field">
+        <svg class="lg-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21 c0-4.4 3.6-7 8-7 s8 2.6 8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="u" placeholder="Username" autocomplete="username">
+      </div>
+      <div class="lg-field">
+        <svg class="lg-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11 V8 a4 4 0 0 1 8 0 v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="p" data-eye="1" type="password" placeholder="Password" autocomplete="current-password">
+        <button type="button" class="lg-eye" onclick="togglePw()" aria-label="Show or hide password"></button>
+      </div>
+      <div class="lg-row"><label class="lg-chk"><input type="checkbox" id="rm"> <span>Remember Me</span></label><a href="#" onclick="forgotPw(event)">Forgot Password?</a></div>
+      <div class="err" id="lerr"></div>
+      <button class="btn full lg-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4 h5 a1 1 0 0 1 1 1 v14 a1 1 0 0 1-1 1 h-5 M4 12 h11 M11 8 l4 4 -4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Login</button>
+      <div class="lg-foot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 L20 6 V12 C20 16.5 16.5 20 12 21 C7.5 20 4 16.5 4 12 V6Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12 l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Authorized Access Only</b><span>This system is for authorized personnel of Barangay Cambalo.</span></div>
+    </form>
+  </div>
+</section>
+<div id="app" class="hide">
+  <div class="side-hot" aria-hidden="true"></div>
+  <aside id="nav"></aside>
+  <div>
+    <header><button type="button" class="btn ghost sm burger" onclick="toggleMenu()" aria-label="Menu" title="Menu">&#9776;</button><div class="who"><div class="av">A</div><div><b id="dn">Admin</b><br><small style="color:var(--mut)">Administrator</small></div></div><button class="btn ghost sm themebtn" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Dark / Light mode"></button><button class="btn ghost sm" onclick="confirmLogout()">Log out</button></header>
+    <main id="view"></main>
+  </div>
+</div>
+<div id="toast" class="hide" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
